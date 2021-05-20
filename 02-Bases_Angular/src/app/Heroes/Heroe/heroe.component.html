@@ -1,0 +1,27 @@
+<h3>Heroe Component</h3>
+<p>Estoy en el heroe component</p>
+
+
+<h1>{{ nombre }}</h1>
+
+
+<dl>
+    <td>Nombre:</td>
+    <dd>{{nombre}}</dd>
+
+    <td>Edad:</td>
+    <dd>{{edad}}</dd>
+
+    <td>Funcion:</td>
+    <dd>{{obtenerNombre()}}</dd>
+
+    <!-- <td>Capitalizado:</td>
+    <dd>{{ nombre.toUpperCase()}}</dd> -->
+
+    <td>Capitalizado:</td>
+    <dd>{{ nombreCapitalizado}}</dd> 
+
+    <!-- !Cambia todo por ser one way data blinding (enlazado en una sola via)-->
+    <button (click)="cambiarNombre()">Cambiar Heroe</button>
+    <button (click)="cambiarEdad=15">Cambiar Edad</button>
+</dl>
