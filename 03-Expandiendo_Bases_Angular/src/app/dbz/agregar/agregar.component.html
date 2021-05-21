@@ -1,0 +1,19 @@
+<h3>Agregar <b>{{ nuevo.nombre  }}</b></h3>
+        <hr>
+        <!-- ( ) SE REFIEREN A UN EVENTO O ESCUCHAR UN EVENTO -->
+        <!-- [ ] SE REFIEREN A UN VALOR O TRAER UN VALOR DEL componente -->
+        <!-- <form (submit)="enviar($event)"> -->
+            <!-- Se necesita el FormsModule -->
+            <form (ngSubmit)="enviar()">
+            <input type="text" name="nombre" placeholder="Nombre"
+                [(ngModel)]="nuevo.nombre"
+            >
+            <!-- [value]="nuevo.nombre"
+            (input)="cambiarNombre($event)" -->
+            <input type="number" placeholder="Poder"
+            name="poder"
+            [(ngModel)]="nuevo.poder"
+            >
+            <!-- ngModel se enlaza con el modelo enviado -->
+            <button type="submit">Agregar</button>
+        </form>

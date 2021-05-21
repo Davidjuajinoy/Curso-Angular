@@ -1,0 +1,10 @@
+
+<h3>Personajes</h3>
+        <hr>
+        <ul>
+           
+            <li *ngFor="let personaje of personajes">
+                {{ personaje.nombre }} - {{ personaje.poder | number}}
+                <!-- Transformar el poder con numeros se usa pytes -->
+            </li>
+        </ul>
