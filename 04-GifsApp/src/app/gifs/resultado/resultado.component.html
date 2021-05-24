@@ -1,0 +1,24 @@
+<div class="row">
+    <ng-container *ngIf="resultado.length != 0; else elseTemplate">
+        <div *ngFor="let gif of resultado" class="col-md-4 col-sm-6 col-12 col-lg-4">
+            <div class="card p-1 mb-5 shadow-sm p-3 mb-5 bg-body rounded">
+                <!-- <img src="{{gif.images.downsized_medium.url}}"  class="card-img" alt=""> -->
+                <img [src]="gif.images.downsized_still.url"  class="img-fluid " style="height: 200px;" [alt]="gif.title">
+                <div class="card-body">
+                    <p class="card-text">
+                        {{ gif.title}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4">
+            <div class="alert alert-warning" role="alert">
+                No se ha encontrado nada acorde a lo buscado.
+              </div>
+        </div>
+    </ng-template>
+    
+   
+</div>

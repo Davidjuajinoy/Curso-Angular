@@ -1,0 +1,21 @@
+ <!--! Sidebar -->  
+ <div class="bg-dark p-3 border-right vh-100 sticky-top ">
+    <h3 class="text-white border-bottom border-white pb-3" >Gifs-App</h3>
+    <div class="d-flex justify-content-center mb-3">
+      <p class="text-white h4" >Historial</p>
+    </div>
+    
+      <div class="list-group">
+         <a href="#" (click)="buscar(historia)" *ngFor="let historia of historial" class="d-flex justify-content-center list-group-item list-group-item-action w-100 text-break list-group-item-primary">
+            {{ historia |titlecase }} 
+            <!-- Asi se agrega el capitalize o con css se puede poner el text-capitalize -->
+         </a>
+      </div>
+ 
+
+   
+
+ 
+  </div>
+
+  <!--! Sidebar -->
