@@ -1,0 +1,18 @@
+
+    <h4 class="border-bottom pb-2 ">Busqueda</h4>
+    <!-- routerLinkActive sirve para poner las clases que se quieren que se pongan cuando se selecciona -->
+    <ul class="mt-3 list-group">
+        <li routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact:true }"
+        class="list-group-item c_pointer" >Buscar País</li>
+        <li
+        routerLink="region" 
+        routerLinkActive="active"
+        class="list-group-item c_pointer" >Por Region</li>
+        <li 
+        routerLinkActive="active"
+        routerLink="capital"
+        class="list-group-item c_pointer" >Por Capital</li>
+    </ul>
+   

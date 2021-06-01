@@ -1,0 +1,16 @@
+<!-- <h1>App Component</h1>
+<app-sidebar></app-sidebar>
+<app-por-capital></app-por-capital>
+<app-por-region></app-por-region>
+<app-ver-pais></app-ver-pais> -->
+
+
+<div class="container row mt-4">
+    <app-sidebar class="col-3"></app-sidebar>
+
+    <div class="col">
+        <!-- llamo el componente que defini en RouteModule -->
+       <router-outlet></router-outlet>
+       
+    </div>
+</div>

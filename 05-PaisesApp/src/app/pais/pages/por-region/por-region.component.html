@@ -1,0 +1,31 @@
+<h3>Buscar por region <b>{{ regionActiva | titlecase }}</b></h3>
+
+<h5>seleccione la region</h5>
+
+
+<div class="row mt-3">
+    <div class="col">
+        <!--  [class.active]="region == regionActiva" para poner una clase segun la condicion -->
+        <!-- tambien asi
+          [ngClass]="{
+            'active': regionActiva == region,
+            'clases de css': true
+        }" -->
+        <!-- Asi tambien se puede 
+           [class]=" (region == regionActiva) ? 'active' : '' "
+            Pero como se busca que no exista tanta logica en el html se hace un funcion
+        -->
+        <button 
+        [class]="getClaseCCS(region)"
+        class="btn btn-outline-primary m-1" (click)="activarRegion(region)" *ngFor="let region of regiones" >
+            {{region | titlecase  }}
+        </button>
+    </div>
+</div>
+
+
+<div class="row" *ngIf="(paises.length > 0)">
+    <div class="col">
+        <app-pais-tabla [paises]="paises" ></app-pais-tabla>
+    </div>
+</div>
