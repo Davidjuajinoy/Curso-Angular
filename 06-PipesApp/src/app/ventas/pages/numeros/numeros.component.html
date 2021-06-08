@@ -1,0 +1,129 @@
+<div class="color__white">
+    <h1>Pipes Numericos</h1>
+    <p>Pipes Incluidos en Angular - Usualmente en el Common Module</p>
+</div>
+
+    <div class="p-grid">
+        
+        <div class="p-col-6">
+            <p-card  header="Ventas Netas" subheader="Del Presente año"  >
+                <ul>
+                    <li>
+                        <i class="pi pi-dollar"></i>
+                        <!-- {{ value_expression | number [ : digitsInfo [ : locale ] ] }} -->
+                        ventasNetas | number:'1.2-2' 
+                        <!-- siempre va a tener 2 decimales -->
+                    </li>
+
+                    <li>
+                        <i class="pi pi-dollar"></i>
+                        <!-- {{ value_expression | number [ : digitsInfo [ : locale ] ] }} -->
+                        860432 | number:'':'es-CO'
+                        <!-- siempre va a tener 2 decimales -->
+                    </li>
+                </ul>
+               
+            </p-card>
+        </div>
+        <div class="p-col-6">
+            <p-card  header="Ventas Netas" subheader="Del Presente año"  >
+                <ul>
+                    <li>
+                        <i class="pi pi-dollar"></i>
+                        <!-- {{ value_expression | number [ : digitsInfo [ : locale ] ] }} -->
+                        {{ ventasNetas | number:'1.2-2'}} 
+                        <!-- siempre va a tener 2 decimales -->
+                    </li>
+
+                    <li>
+                        <i class="pi pi-dollar"></i>
+                        <!-- {{ value_expression | number [ : digitsInfo [ : locale ] ] }} -->
+                        {{ 860432 | number:'':'es-CO'}} 
+                        <!-- siempre va a tener 2 decimales -->
+                    </li>
+                </ul>
+               
+            </p-card>
+        </div>
+
+
+        <div class="p-col-6">
+            <p-card  header="Ventas Brutas" subheader="Del Presente año"  >
+                <ul>
+                    <li>
+                        ventasNetas | currency:'CoLombo''
+                    </li>
+    
+                    <li>
+                        ventasNetas | currency:'':'symbol-narrow':'1.0-4':'es-CO'
+                    </li>
+
+                    <li>
+                        ventasNetas | currency:''
+                    </li>
+                </ul>
+               
+            </p-card>
+        </div>
+
+        
+        <div class="p-col-6">
+            <p-card  header="Ventas Brutas" subheader="Del Presente año"  >
+                <ul>
+                    <li>
+                        <!-- {{ value_expression | currency [ : currencyCode [ : display [ : digitsInfo [ : locale ] ] ] ] }} -->
+                        {{ ventasNetas | currency:'CoLombo' }}
+                    </li>
+    
+                    <li>
+                        {{ ventasNetas | currency:'':'symbol-narrow':'1.0-4':'es-CO' }}
+                    </li>
+                    <li>
+                        {{ ventasNetas | currency:''}}
+                    </li>
+                </ul>
+               
+            </p-card>
+        </div>
+        <div class="p-col-6">
+            <p-card  header="Ventas porcental" subheader="Del Presente año"  >
+                <ul>
+                    <li>
+                        porcentaje | percent:''
+                    </li>
+    
+                    <li>
+                        porcentaje | percent:'1.2-2'
+                    </li>
+
+                    <li>
+                        ventasNetas | currency:''
+                    </li>
+                </ul>
+               
+            </p-card>
+        </div>
+
+
+        <div class="p-col-6">
+            <p-card  header="Ventas porcental" subheader="Del Presente año"  >
+                <ul>
+                    <li>
+                        <!-- {{ value_expression | percent [ : digitsInfo [ : locale ] ] }} -->
+                       {{  porcentaje | percent:''}}
+                    </li>
+
+                    <li>
+                       {{  porcentaje | percent:'1.2-2'}}
+                    </li>
+    
+                  
+                </ul>
+               
+            </p-card>
+        </div>
+    </div>
+
+
+
+    

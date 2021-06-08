@@ -1,0 +1,80 @@
+<div class="color__white">
+    <h1>Pipes Básicos</h1>
+    <p>Pipes Incluidos en Angular - Usualmente en el Common Module</p>
+</div>
+<!-- TITLECASE , UPPERCASE , LOWERCASE -->
+<div class="p-grid">
+    <div class="p-col-4">
+        <p-card [header]="'uppercase' | uppercase" [subheader]="nombre | uppercase" >
+            <p>  {{ 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!' | uppercase }} </p>
+        </p-card>
+    </div>
+    <div class="p-col-4">
+        <p-card [header]="'lowercase' | uppercase"  [subheader]="nombre | lowercase" >
+            <p>{{ 'LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT. INVENTORE SED CONSEQUUNTUR ERROR REPUDIANDAE NUMQUAM DESERUNT QUISQUAM REPELLAT LIBERO ASPERIORES EARUM NAM NOBIS, CULPA RATIONE QUAM PERFERENDIS ESSE, CUPIDITATE NEQUE QUAS!'  | lowercase }}</p>
+        </p-card>
+    </div>
+
+    <div class="p-col-4">
+        <p-card [header]="'Title Case' | titlecase"  [subheader]="nombre | titlecase" >
+            <p>{{ 'LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT. INVENTORE SED CONSEQUUNTUR ERROR REPUDIANDAE NUMQUAM DESERUNT QUISQUAM REPELLAT LIBERO ASPERIORES EARUM NAM NOBIS, CULPA RATIONE QUAM PERFERENDIS ESSE, CUPIDITATE NEQUE QUAS!'  | titlecase }}</p>
+        </p-card>
+    </div>
+
+    
+</div>
+<!-- END TITLECASE , UPPERCASE , LOWERCASE -->
+
+
+
+<!-- DATE -->
+<div class="color__white">
+    <h1>Date | Fecha | Pipe</h1>
+    <p>Pipes Incluidos en Angular - Usualmente en el Common Module</p>
+</div>
+<div class="p-grid" >
+    
+
+    <div class="p-col-6">
+        <p-card>
+            <ul>
+                <li>fecha</li>
+                <li>fecha | date</li>
+                <li>fecha | date:'short'</li>
+                <li>fecha | date:'long'</li>
+                <li>fecha | date:'yyyy-MM-dd'</li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li>fecha | date:'long':'GMT-10'</li>
+                <li>fecha | date:'long':'GMT-4'</li>
+                <li>fecha | date:'long':'':'En'</li>
+                <li>fecha | date:'long':'':'Fr'</li>
+                <li>fecha | date:'long':'':'es-CO'</li>
+            </ul>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card>
+            <ul>
+                <li>{{ fecha }}</li>
+                <li>{{ fecha | date }}</li>
+                <li>{{ fecha | date:'short' }}</li>
+                <li>{{ fecha | date:'yyyy-MM-dd' }}</li>
+            </ul>
+            <hr>
+            <ul>
+                <li>{{fecha | date:'long':'GMT-10'}}</li>
+                <li>{{fecha | date:'long':'GMT-4'}}</li>
+                <li>{{fecha | date:'long':'':'En'}}</li>
+                <li>{{fecha | date:'long':'':'Fr'}}</li>
+                <li>{{fecha | date:'long':'':'es-Co'}}</li>
+             
+            </ul>
+        </p-card>
+    </div>
+</div>
+
+<!-- END DATE -->
