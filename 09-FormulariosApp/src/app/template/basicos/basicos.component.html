@@ -1,0 +1,40 @@
+<!-- Son los que se hace la logica en el html -->
+<!-- Si se le agrega el atributo required ,validara que lo requiera , con angular-->
+<!-- Si se le agrega el atributo minlenght ,validara los minimos caracteres, con angular -->
+<!-- <form (ngSubmit)="guardar(miformulario)" #miformulario="ngForm"> -->
+<form (ngSubmit)="guardar()" #miformulario="ngForm">
+    <div class="mb-3">
+      <label  class="form-label">Producto</label>
+      <input [ngModel]="initForm.producto" name="producto" type="text" class="form-control" required minlength="3">
+      <!-- <span class="form-text text-danger" *ngIf="miformulario.controls.producto?.invalid && miformulario.controls.producto?.touched" >Debe ser de 3 letras</span> -->
+      <span class="form-text text-danger" *ngIf="nombreValido()" >Debe ser de 3 letras</span>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Precio</label>
+      <input  ngModel customMin name="precio" type="number" class="form-control" [minimo]="1" required>
+      <span class="form-text text-danger" *ngIf="precioValido()" >Debe ser mayor a 0</span>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Existencias</label>
+      <input ngModel name="existencias" type="number" customMin [minimo]="1" required class="form-control" >
+    </div>
+
+    <button type="submit" [disabled]="miformulario.invalid" class="btn btn-primary">Guardar</button>
+  </form>
+
+
+  <div class="row">
+      <div class="col">
+          <span>Valid</span>
+          <pre>{{ miformulario.valid | json }}</pre>
+          <span><b>Pristine</b> que no se han cambiado los valores del form</span>
+          <pre>{{ miformulario.pristine }}</pre>
+          <span><b>Touched</b> Que entre a un input aunque no cambie nada</span>
+          <pre>{{ miformulario.touched }}</pre>
+          <span>Value</span>
+          <pre>{{ miformulario.value | json }}</pre>
+          <span>CustomMin</span>
+          <pre>{{ miformulario?.controls?.existencias?.errors| json }}</pre>
+      </div>
+      
+  </div>

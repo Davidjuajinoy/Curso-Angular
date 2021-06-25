@@ -1,0 +1,7 @@
+<h2 mat-dialog-title>Desea eliminar el Héroe <b>{{data.superhero}}</b></h2>
+<!-- <mat-dialog-content>This will delete all elements that are currently on this page and cannot be undone.</mat-dialog-content> -->
+<mat-dialog-actions fxLayout="row" fxLayoutGap="10%" fxFlexAlign="center" >
+  <button fxFlex="40" mat-raised-button color="primary" (click)="cerrar()" >Cancelar</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button fxFlex="40" mat-raised-button color="warn" (click)="borrar()" >Eliminar</button>
+</mat-dialog-actions>

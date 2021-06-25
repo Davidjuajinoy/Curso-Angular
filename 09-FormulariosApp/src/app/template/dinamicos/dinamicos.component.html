@@ -1,0 +1,76 @@
+<h2>Template: <small>Dinamicos</small></h2>
+<hr>
+
+<form  #miFormulario="ngForm" (ngSubmit)="guardar()" autocomplete="off" >
+    <div class="mb-3 row">
+        <label class="col-3 col-form-label">Nombre</label>
+        <div class="col">
+            <input type="text" name="nombre" [ngModel]="persona.nombre" class="form-control"  required>
+            <span class="form-text text-danger" *ngIf="miFormulario?.controls?.nombre?.errors" >Este campo es obligatorio</span>
+        </div>
+    </div>
+
+
+    <div class="mb-3 row">
+        <label class="col-3 col-form-label">Agregar</label>
+        <div class="col-sm-9">
+            <div class="input-group">
+                <input type="text" name="agregarFavorito" [(ngModel)]="nuevoJuego" class="form-control"  placeholder="agregar favorito" required>
+                <button type="button" class="btn btn-outline-primary"
+                (click)="agregarJuego()"
+                [disabled]="miFormulario?.controls?.agregarFavorito?.errors"
+                >Agregar</button>
+
+            </div>
+            <span class="form-text text-danger" *ngIf="miFormulario?.controls?.agregarFavorito?.errors" >Este campo es obligatorio</span>
+        </div>
+    </div>
+    
+      
+
+
+        <div class="mb-3 row">
+            <label class="col-3 col-form-label">Favoritos</label>
+            <div class="col-sm-9 input-group">
+                
+                    <div class="input-group mt-1" *ngFor="let favorito of persona.favoritos"> 
+
+                        <input type="text"   [(ngModel)]="favorito.nombre" [name]="favorito.nombre" class="form-control">
+                        <button type="button" class="btn btn-outline-danger" (click)="eliminar(favorito.id)"
+                        >Eliminar</button>
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <button type="submit" class="btn mt-3 btn-primary" [disabled]="miFormulario?.invalid">Guardar</button>
+        </div>
+        
+
+        <ul class="list-group mt-3">
+            <li class="list-group-item" *ngFor="let favorito of persona.favoritos;let i=index">
+                {{favorito.nombre}}    
+            </li>
+        </ul>
+
+        <span>Value</span>
+        <pre>{{ persona | json }}</pre>
+
+</form>
+
+
+
+<div class="row">
+    <div class="col">
+        <span>Valid</span>
+        <pre>{{ miFormulario.valid | json }}</pre>
+        <span><b>Pristine</b> que no se han cambiado los valores del form</span>
+        <pre>{{ miFormulario.pristine }}</pre>
+        <span><b>Touched</b> Que entre a un input aunque no cambie nada</span>
+        <pre>{{ miFormulario.touched }}</pre>
+        <span>Value</span>
+        <pre>{{ miFormulario.value | json }}</pre>
+    </div>
+    
+</div>
