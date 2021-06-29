@@ -22,7 +22,7 @@ export class CustomMinDirective implements Validators{
     validate(control : FormControl)
     {
         const inputValue = control.value;
-        console.log(this.minimo);
+        // console.log(this.minimo);
         return (inputValue < this.minimo ) ? {'customMin':true} : null;
         
     }
