@@ -1,0 +1,70 @@
+
+<div class="container">
+
+    <h2 class="mt-5">Selectores anidados</h2>
+    <hr>
+    
+    
+    <form [formGroup]="miFormulario" (ngSubmit)="guardarContinente()" >
+       
+        <div class="row mb-4" *ngIf="continentes.length > 0" >
+            <div class="col">
+                <label for="continente" class="form-label">Continente:</label>
+                <select class="form-control" formControlName="continente"  id="continente" >
+                    <option value="">----Seleccione Continente----</option>
+                    <option *ngFor="let continente of continentes;" [value]="continente | lowercase"
+                    >{{continente | titlecase }}</option>
+                </select>
+                <span class="text-danger text-capitalize" *ngIf="validarCampo('continente')">Debe seleccionar un continente</span>
+            </div>
+        </div>
+
+        <div class="row mb-4"  *ngIf="paises.length > 0">
+            <div class="col">
+                <label for="pais" class="form-label">Paises:</label>
+                <select class="form-control" formControlName="pais"  id="pais" >
+                    <option value="">----Seleccione país----</option>
+                    <option *ngFor="let pais of paises;" [value]="pais.alpha3Code"
+                    >{{pais.name | titlecase }}</option>
+                </select>
+                <span class="text-danger text-capitalize" *ngIf="validarCampo('pais')">Debe seleccionar un pais</span>
+            </div>
+        </div>
+
+
+        <div class="row mb-4"  *ngIf="fronteras.length > 0">
+            <div class="col">
+                <label for="frontera" class="form-label">Frontera:</label>
+                <select class="form-control" formControlName="frontera"  id="frontera" >
+                    <option value="">----Seleccione país Fronterizo----</option>
+                    <option *ngFor="let frontera of fronteras;" [value]="frontera.alpha3Code"
+                    >{{frontera.name  }}</option>
+                </select>
+                <span class="text-danger text-capitalize" *ngIf="validarCampo('frontera')">Debe seleccionar una frontera</span>
+            </div>
+        </div>
+
+
+        <div class="d-flex justify-content-center" *ngIf="cargando">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary" >Seleccionar</button>
+        </div>
+    </form>
+
+
+
+    <div class="row mt-5">
+        <span>Form Value</span>
+        <pre>{{miFormulario.value| json}}</pre>
+        <span>Form valid</span>
+        <pre>{{miFormulario.valid| json}}</pre>
+    </div>
+
+
+
+</div>

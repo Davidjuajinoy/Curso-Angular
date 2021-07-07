@@ -1,0 +1,94 @@
+<h2>Validaciones Reactivas</h2>
+
+<hr>
+<form  [formGroup]="miFormulario" (ngSubmit)="guardar()" >
+    <div class="row mb-3">
+        <div class="col-3">
+            <label for="nombre" class="form-label">Nombre</label>
+        </div>
+
+        <div class="col-9">
+            <input type="text" id="nombre" formControlName="nombre"  class="form-control" placeholder="Nombre del usuario">
+            <span  *ngIf="validarCampo('nombre')" class="text-danger">Debe ser en formato nombre y apellido</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-3">
+            <label for="email" class="form-label ">Email</label>
+        </div>
+
+        <div class="col-9">
+            <input type="email" id="email" formControlName="email" class="form-control" placeholder="email del usuario" >
+            <span  *ngIf="validarCampo('email')" class="text-danger">Debe ser en formato email</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-3">
+            <label for="username" class="form-label ">Username</label>
+        </div>
+
+        <div class="col-9">
+            <input type="text" id="username" formControlName="username" class="form-control"   >
+            <span  *ngIf="validarCampo('username')" class="text-danger">El usuario striker no se puede usar</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-3">
+            <label for="password" class="form-label ">password</label>
+        </div>
+
+        <div class="col-9">
+            <input type="password" id="password" formControlName="password"  class="form-control">
+            <span  *ngIf="validarCampo('password')" class="text-danger">Debe ser en formato password</span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-3">
+            <label for="confirmar" class="form-label ">Confirmar</label>
+        </div>
+
+        <div class="col-9">
+            <input type="confirmar" id="confirmar" formControlName="confirmar" class="form-control" placeholder="Confirmar Contraseña">
+            <span *ngIf="validarCampo('confirmar')"  class="text-danger">Las Contraseñas deben ser iguales </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary" >Guardar</button>
+        </div>
+    </div>
+
+</form>
+
+<div class="row">
+    <div class="col">
+        <h4>estados del formulario</h4>
+        <span>Valid</span>
+        <pre>{{ miFormulario.valid }}</pre>
+        <span>state</span>
+        <pre>{{ miFormulario.status}}</pre>
+        <span>pending</span>
+        <pre>{{ miFormulario.pending }}</pre>
+        <hr>
+
+        <span>Errores</span>
+        <span>form</span>
+        <pre>{{ miFormulario.errors |json }}</pre>
+        <span>nombre</span>
+        <pre>{{ miFormulario.controls.nombre.errors |json }}</pre>
+        <span>email</span>
+        <pre>{{ miFormulario.controls.email.errors |json }}</pre>
+        <span>username</span>
+        <pre>{{ miFormulario.controls.username.errors |json }}</pre>
+        <span>password</span>
+        <pre>{{ miFormulario.controls.password.errors |json }}</pre>
+        <span>confirmar</span>
+        <pre>{{ miFormulario.controls.confirmar.errors |json }}</pre>
+        <hr>
+
+        <span>Value</span>
+        <pre>{{ miFormulario.value | json }}</pre>
+    </div>
+</div>
