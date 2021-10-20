@@ -24,7 +24,7 @@ export class ZoomRangeComponent implements AfterViewInit,OnDestroy {
 
   center: [number,number]=[-74.20630320939813,4.631452032441016];
 
-  //Mapa prop
+  //Mapa propiedad 
   mapa!: mapboxgl.Map;
 
   ngAfterViewInit(): void {

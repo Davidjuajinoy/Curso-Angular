@@ -1,1 +1,31 @@
-<p>marcadores works!</p>
+<div #mapa class="w-100 h-100 "></div>
+
+
+<div class="position-fixed p-1 bg-light rounded  end-0 btn-marker ">
+    <div class="list-group">
+        <button (click)="agregarMarcador()" class="list-group-item list-group-item-success"> {{'agregar' | titlecase }} </button>
+
+       
+        <!-- <button class="list-group-item list-group-item-info  list-group-item-action" 
+        [ngStyle]="{'background-color': marker.color}" *ngFor="let marker of markers; let i=index"
+        (click)="irMarcador(marker.marker!)"
+        >
+        Marker {{ i+1 }}</button>
+        (click)="irMarcador(i)" opcion mia -->
+
+        <div class="input-group mb-1" [ngStyle]="{'background-color': marker.color}" *ngFor="let marker of markers; let i=index"
+        (click)="irMarcador(marker.marker!)">
+            <button class="btn"
+            >Marker {{ i+1 }}</button>
+        <!-- (click)="irMarcador(i)" opcion mia-->
+            <button (click)="eliminarMarcador(i)" class="btn btn-danger"
+            >Eliminar</button>
+
+        </div>
+    </div>
+    
+    
+  
+
+
+</div>
