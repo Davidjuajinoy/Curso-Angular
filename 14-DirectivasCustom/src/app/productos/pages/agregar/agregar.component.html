@@ -1,0 +1,61 @@
+<div class="container">
+    <h1 class="mt-5">Agregar Producto</h1>
+
+<form [formGroup]="miFormulario">
+    <div class="row g-3 align-items-center my-3">
+        <div class="col-auto">
+            <label for="exampleInputEmail1" class="col-form-label">Nombre:</label>
+        </div>
+        <div class="col-auto">
+                <input type="text" formControlName="nombre" class="form-control" id="exampleInputEmail1">
+
+        </div>      
+       <!-- se puede de las dos maneras -->
+        <div class="col-auto">
+            <span class="form-text"
+            error-msg color="blue" [color]="color" 
+            msg="Este campo es requerido"
+            *ngIf="tieneError('nombre')"
+            ></span>
+        </div>
+        <div class="col-auto">
+            <span class="form-text"
+            error-msg  
+            [valido]="miFormulario.valid"
+            
+            ></span>
+        </div>
+
+        
+        
+        <div class="d-flex justify-content-start">
+            <button class="btn btn-primary" (click)="cambiarNombre()">
+                Guardar
+            </button>
+
+            <button class="btn btn-primary" (click)="cambiarColor()">
+                color
+            </button>
+        </div>
+    </div>
+
+</form>
+
+
+
+<h3 [class]="['mt-5','text-primary']" error-msg color="pink" [msg]="texto1"></h3>
+<pre>Value: {{ miFormulario.value | json }}</pre>
+<pre>Valid: {{ miFormulario.valid }}</pre>
+
+
+<div class="row mt-5" *appCustomIf="miFormulario.valid">
+    <div class="col">
+        <div class="alert alert-primary">
+            Todo OK!
+        </div>
+    </div>
+</div>
+
+</div>
+
+

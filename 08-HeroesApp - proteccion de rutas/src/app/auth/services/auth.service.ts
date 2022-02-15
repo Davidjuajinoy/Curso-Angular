@@ -30,7 +30,7 @@ export class AuthService {
   verificaAutentificacion() :Observable<boolean> 
   {
     if (!localStorage.getItem('id')) {
-      //crea observable con of
+      //crear un observable se hace con  of
       return of(false);
     }
 
